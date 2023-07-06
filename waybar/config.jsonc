@@ -1,0 +1,96 @@
+{
+  "position": "top",
+  "layer": "top",
+  
+  "modules-left":   [
+    "sway/workspaces"
+  ],
+  "modules-center": [],
+  "modules-right":  [
+    "tray",
+    "network",
+    "battery",
+    "backlight",
+    "pulseaudio",
+    "clock",
+  ],
+
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "persistent_workspaces": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9"
+    }
+  },
+  
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+  },
+  
+  "battery": {
+    "states": {
+      //"good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": " {icon} {capacity}% ",
+    "format-charging": " 󰂄 {capacity}% ",
+    "format-alt": " {icon} {capacity}% ",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "",
+  },
+  
+  "clock": {
+   "format": "{:%a %d %b [%R]}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 {essid}",
+    "format-disconnected": " Offline",
+    "tooltip-format-wifi": "{essid} | Signal: {signalStrength}% | Download: {bandwidthDownBits}, Upload: {bandwidthUpBits}",
+    //"tooltip": false,
+  },
+  
+  "pulseaudio": {
+    "tooltip-format": "",
+    "format": "{icon} {volume}%",
+    "format-muted": "󰸈 Muted",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-bluetooth": " {volume}% {format_source}",
+    "format-bluetooth-muted": "󰂲 {format_source}",
+    "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "scroll-step": 1,
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": ["", "", "󰕾", ""]
+    }
+  },
+
+  "backlight": {
+    "device": "amdgpu_bl0",
+    "format": "{icon} {percent}% ",
+    "format-icons": ["", "󰖨"]
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "   {}% ",
+    "max-length": 10
+  }
+
+}
