@@ -18,8 +18,8 @@ set $filemanager thunar
 
 
 ### Output configuration
-#output * bg $HOME/.config/background  fill
-exec swaybg -i $HOME/.config/background &
+output * bg $HOME/.config/wallpaper fill
+#exec swaybg -i $HOME/.config/background &
 
 ### Idle configuration
 exec swayidle -w \
@@ -31,8 +31,8 @@ exec swayidle -w \
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-# Master-Stack, using stacki3
-exec $HOME/.local/bin/stacki3
+# Autotiling
+exec autotiling
 
 ### Input configuration
 input type:touchpad {
@@ -67,12 +67,12 @@ input type:keyboard {
     bindsym $mod+p exec $powermenu
 
     # File Manager
-    bindsym $mod+t exec $filemanager
+    bindsym $mod+e exec $filemanager
 
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Ctrl+r reload
+    bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -87,10 +87,10 @@ input type:keyboard {
 
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+    bindsym $mod+Shift+$left mark swap, focus left, swap container with mark swap, unmark swap, focus left
+    bindsym $mod+Shift+$down mark swap, focus down, swap container with mark swap, unmark swap, focus down
+    bindsym $mod+Shift+$up mark swap, focus up, swap container with mark swap, unmark swap, focus up
+    bindsym $mod+Shift+$right mark swap, focus right, swap container with mark swap, unmark swap, focus right
 
 # Workspaces:
 #
@@ -133,8 +133,10 @@ input type:keyboard {
     # Swap focus between the tiling area and the floating area
     #bindsym $mod+space focus mode_toggle
 
-    # Move focus to the parent container
-    #bindsym $mod+a focus parent
+    bindsym Mod1+$left resize shrink width 10px
+    bindsym Mod1+$down resize shrink height 10px
+    bindsym Mod1+$up resize grow height 10px
+    bindsym Mod1+$right resize grow width 10px
 
 # Media keys
   bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -154,7 +156,7 @@ bar {
 # Gaps
 #smart_borders on
 #smart_gaps on
-gaps outer 0
+gaps outer 3
 gaps inner 6
 
 # Title Bars
@@ -166,7 +168,7 @@ default_floating_border pixel 2
 # Colors
 set $cl_high #7c6f64
 set $cl_indi #7c6f64
-set $cl_back #231f20
+set $cl_back #282828
 set $cl_fore #d9d8d8
 set $cl_urge #ee2e24
 
