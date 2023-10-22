@@ -1,7 +1,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: Iosevka Nerd Font Mono;
+  font-family: JetBrains Mono Nerd Font;
   font-size: 15px;
   font-weight: bold;
   min-height: 0;
@@ -36,7 +36,8 @@ tooltip * {
 #workspaces button {
   color: #504945;
   margin: 0;
-  padding: 2px;
+  padding: 0px;
+  min-width: 24px;
 }
 
 #workspaces button.current_output {

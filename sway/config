@@ -12,6 +12,7 @@ set $term foot
 set $launcher bash $HOME/.config/rofi/launcher.sh
 set $powermenu bash $HOME/.config/rofi/powermenu.sh
 set $filemanager thunar
+set $resize $HOME/.config/sway/scripts/resize.sh
 
 
 #xwayland disable
@@ -92,6 +93,16 @@ input type:keyboard {
     bindsym $mod+Shift+$up mark swap, focus up, swap container with mark swap, unmark swap, focus up
     bindsym $mod+Shift+$right mark swap, focus right, swap container with mark swap, unmark swap, focus right
 
+#
+# Resize
+#
+    # Resize with Alt + arrow key
+    bindsym Mod1+$left exec $resize left 40px
+    bindsym Mod1+$down exec $resize down 40px
+    bindsym Mod1+$up exec $resize up 40px
+    bindsym Mod1+$right exec $resize right 40px
+
+
 # Workspaces:
 #
     # Switch to workspace
@@ -133,10 +144,7 @@ input type:keyboard {
     # Swap focus between the tiling area and the floating area
     #bindsym $mod+space focus mode_toggle
 
-    bindsym Mod1+$left resize shrink width 10px
-    bindsym Mod1+$down resize shrink height 10px
-    bindsym Mod1+$up resize grow height 10px
-    bindsym Mod1+$right resize grow width 10px
+
 
 # Media keys
   bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
