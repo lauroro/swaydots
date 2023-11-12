@@ -1,4 +1,4 @@
 # swaydots
 
 ## programs
-sway, swaybg, swayidle, swaylock-effects, stacki3, rofi-wayland, foot, waybar, thunar
+sway, swayidle, gtklock, autotiling, rofi, foot, waybar, thunar, swaync
