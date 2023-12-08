@@ -10,8 +10,8 @@ selected_option=$(echo "$lock
 $exit
 $sleep
 $reboot
-$shutdown" | rofi -dmenu -i -p "Powermenu" \
-		  -theme "~/.config/rofi/powermenu.rasi")
+$shutdown" | fuzzel -d )
+
 
 if [ "$selected_option" == "$lock" ]
 then

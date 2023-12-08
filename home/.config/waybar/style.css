@@ -1,3 +1,11 @@
+@define-color base #1d2021;
+@define-color text #7c6f64;
+@define-color accent #d4be98;
+@define-color dark-accent #504945;
+@define-color hover-background #32302f;
+@define-color warning yellow;
+@define-color critical red;
+
 * {
   border: none;
   border-radius: 0;
@@ -11,55 +19,56 @@
 }
 
 window#waybar {
-  background: #1d2021;
-  color: #7c6f64;
+  background: @base;
+  color: @text;
   border-radius: 0px;
 }
 
 tooltip {
-  background: #1d2021;
+  background: @base;
   border-radius: 2px;
   border-width: 1px;
   border-style: solid;
-  border-color: #7c6f64;
+  border-color: @text;
 }
 
 tooltip * {
-  color: #7c6f64;
+  color: @text;
 }
 
 #workspaces {
   padding: 0px;
   margin-left: 0px;
+  background-color: transparent;
 }
 
 #workspaces button {
-  color: #504945;
+  background-color: transparent;
+  color: @dark-accent;
   margin: 0;
   padding: 0px;
   min-width: 24px;
 }
 
 #workspaces button.current_output {
-  color: #d4be98;
+  color: @accent;
 }
 
 #workspaces button.focused {
-  color: #d4be98;
+  color: @accent;
   border-radius: 0px;
-  background-color: #32302f;
-  border-bottom: 1px solid #d4be98;
+  background-color: @hover-background;
+  border-bottom: 1px solid @accent;
 }
 
 #workspaces button:hover {
-  color: #d4be98;
+  color: @accent;
   border-radius: 0px;
-  background-color: #32302f;
+  background-color: @hover-background;
 }
 
 #clock, #battery, #pulseaudio, #wireplumber, #network, #tray, #backlight {
   padding: 6px 8px;
-  /*background-color: #202020;*/
 }
 
 #tray {
@@ -79,26 +88,29 @@ tooltip * {
   margin-right: 8px;
 }
 
-#battery{
+#battery {
   border-radius: 0 6px 6px 0;
   margin-right: 0px;
 }
 
-#battery.warning{
+#battery.warning,
+#battery.critical {
   border-radius: 0px;
   border-bottom: 2px solid;
-  border-color: yellow;
   margin-bottom: 3px;
 }
 
-#battery.critical{
-  border-radius: 0px;
-  border-bottom: 2px solid;
-  border-color: red;
-  margin-bottom: 3px;
+#battery.warning {
+  border-color: @warning;
 }
 
-#custom-notifications{
+#battery.critical {
+  border-color: @critical;
+}
+
+
+#custom-notifications {
   padding-right: 10px;
   font-size: 14px;
 }
+
