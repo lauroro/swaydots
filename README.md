@@ -1,4 +1,4 @@
-# swaydots
+# My Dotfiles
 
 ## programs
-sway, swayidle, gtklock, autotiling, rofi, foot, waybar, thunar, swaync
+sway, swayidle, gtklock, autotiling, fuzzel, foot, waybar, thunar, mako, mpv, rxfetch
