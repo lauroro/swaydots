@@ -10,7 +10,7 @@ selected_option=$(echo "$lock
 $exit
 $sleep
 $reboot
-$shutdown" | fuzzel -d )
+$shutdown" | fuzzel -d --lines 5 --width 14 )
 
 
 if [ "$selected_option" == "$lock" ]

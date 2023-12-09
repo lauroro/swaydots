@@ -1,4 +1,4 @@
-@define-color base #1d2021;
+@define-color base #282828;
 @define-color text #7c6f64;
 @define-color accent #d4be98;
 @define-color dark-accent #504945;
@@ -48,6 +48,7 @@ tooltip * {
   margin: 0;
   padding: 0px;
   min-width: 24px;
+  border-bottom: 1px solid transparent
 }
 
 #workspaces button.current_output {
