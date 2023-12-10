@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
  
 lock=" Lock"
 exit="󰗼 Exit"
@@ -12,22 +12,23 @@ $sleep
 $reboot
 $shutdown" | fuzzel -d --lines 5 --width 14 )
 
-
-if [ "$selected_option" == "$lock" ]
-then
-  gtklock -d
-elif [ "$selected_option" == "$exit" ]
-then
-  swaymsg exit
-elif [ "$selected_option" == "$shutdown" ]
-then
-  loginctl poweroff
-elif [ "$selected_option" == "$reboot" ]
-then
-  loginctl reboot
-elif [ "$selected_option" == "$sleep" ]
-then
-  loginctl suspend
-else
-  echo "No match"
-fi
+case $selected_option in
+  "$lock")
+    gtklock -d
+    ;;
+  "$exit")
+    swaymsg exit
+    ;;
+  "$shutdown")
+    loginctl poweroff
+    ;;
+  "$reboot")
+    loginctl reboot
+    ;;
+  "$sleep")
+    loginctl suspend
+    ;;
+  *)
+    echo "No match"
+    ;;
+esac

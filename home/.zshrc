@@ -21,6 +21,3 @@ PROMPT='%B%F{yellow}%n %~%b%f
 # Alias
 alias sw="dbus-run-session sway"
 alias ls="ls --color"
-
-# Envs
-export MOZ_ENABLE_WAYLAND=1

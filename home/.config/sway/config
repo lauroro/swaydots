@@ -8,18 +8,16 @@ set $up Up
 set $right Right
 set $term foot
 set $launcher fuzzel
-set $powermenu bash $HOME/.config/fuzzel/powermenu.sh
+set $powermenu $HOME/.config/fuzzel/powermenu.sh
 set $filemanager thunar
 set $resize $HOME/.config/sway/scripts/resize.sh
 set $envs $HOME/.config/sway/scripts/envs.sh
 
-
-# Env Variables
-exec $envs
-
+### Bg processes
 #xwayland disable
 exec mako
 exec pipewire
+exec pipewire-pulse
 exec autotiling
 
 ### Output configuration
