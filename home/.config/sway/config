@@ -17,7 +17,7 @@ set $envs $HOME/.config/sway/scripts/envs.sh
 #xwayland disable
 exec mako
 exec pipewire
-exec pipewire-pulse
+exec wireplumber
 exec autotiling
 
 ### Output configuration
