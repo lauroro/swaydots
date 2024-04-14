@@ -48,7 +48,7 @@ tooltip * {
   margin: 0;
   padding: 0px;
   min-width: 24px;
-  border-bottom: 1px solid transparent
+  border-bottom: 1px solid transparent;
 }
 
 #workspaces button.current_output {
@@ -64,11 +64,15 @@ tooltip * {
 
 #workspaces button:hover {
   color: @accent;
-  border-radius: 0px;
   background-color: @hover-background;
 }
 
-#clock, #battery, #pulseaudio, #wireplumber, #network, #tray, #backlight {
+#clock,
+#battery,
+#wireplumber,
+#network,
+#tray,
+#backlight {
   padding: 6px 8px;
 }
 
@@ -85,7 +89,7 @@ tooltip * {
   border-radius: 6px 0px 0px 6px;
 }
 
-#pulseaudio, #wireplumber {
+#wireplumber {
   margin-right: 8px;
 }
 
@@ -109,9 +113,7 @@ tooltip * {
   border-color: @critical;
 }
 
-
 #custom-notifications {
   padding-right: 10px;
   font-size: 14px;
 }
-

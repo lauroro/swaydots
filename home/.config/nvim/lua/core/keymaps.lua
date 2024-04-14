@@ -1,24 +1,30 @@
-local keymap = vim.api.nvim_set_keymap
-keymap('n', '<C-w>', ':w<CR>', {})
-keymap('i', '<C-w>', '<ESC>:w<CR>', {})
-keymap('n', '<C-q>', ':q<CR>', {})
-keymap('n', '<C-n>', ':set number!<CR>', {})
-keymap('i', '<C-n>', '<ESC>:set number!<CR>a', {})
-keymap('n', '<C-u>', ':u<CR>', {})
-keymap('i', '<C-u>', '<ESC>:u<CR>a', {})
-keymap('n', '<space>s', ':vsplit<CR>', {})
-keymap('n', '<C-c>', ':ColorizerToggle<CR>', {})
-keymap('n', '<ScrollWheelUp>', '<C-Y>', {})
-keymap('n', '<ScrollWheelDown>', '<C-E>', {})
+local keymap = vim.keymap.set
 
-keymap('n', '<A-e>', ':NvimTreeToggle<CR>', {})
+-- Leader key (Space bar)
+vim.g.mapleader = " "
 
-keymap('n', '<c-h>', ':WhichKey<CR>', {})
+-- :w shortcut
+keymap("n", "<Leader>w", ":w<CR>", { desc = "Write" })
 
-keymap('n', '<space>t', ':TroubleToggle<CR>', {})
+-- :q shortcut
+keymap("n", "<Leader>q", ":q<CR>", { desc = "Quit/Close" })
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<space>ff', builtin.find_files, {})
-vim.keymap.set('n', '<space>fb', builtin.buffers, {})
-vim.keymap.set('n', '<space>fh', builtin.help_tags, {})
-vim.keymap.set("n", '<space>fg', require('telescope').extensions.live_grep_args.live_grep_args, {})
+-- Scroll with mouse
+keymap("n", "<ScrollWheelUp>", "<C-Y>", {})
+keymap("n", "<ScrollWheelDown>", "<C-E>", {})
+
+-- Split vertically
+keymap("n", "<Leader>s", ":vsplit<CR>", {})
+
+-- Navigate splits
+keymap("n", "<C-Left>", ":winc h<CR>", {})
+keymap("n", "<C-Down>", ":winc j<CR>", {})
+keymap("n", "<C-Up>", ":winc k<CR>", {})
+keymap("n", "<C-Right>", ":winc l<CR>", {})
+
+-- Resize current split
+keymap("n", "<Leader>+", ":vertical resize +5<CR>", {})
+keymap("n", "<Leader>-", ":vertical resize -5<CR>", {})
+
+-- Select all
+keymap("n", "<Leader>a", "ggVG", { desc = "Select all" })

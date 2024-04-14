@@ -1,11 +1,6 @@
-local plugin = {
-  'folke/which-key.nvim'
+return {
+  "folke/which-key.nvim",
+  config = function()
+		require("which-key").setup()
+  end
 }
-
-function plugin.config()
-  vim.o.timeout = true
-  vim.o.timeoutlen = 300
-  require("which-key").setup {}
-end
-
-return plugin

@@ -21,3 +21,4 @@ PROMPT='%B%F{yellow}%n %~%b%f
 # Alias
 alias sw="dbus-run-session sway"
 alias ls="ls --color"
+alias nv="nvim"
