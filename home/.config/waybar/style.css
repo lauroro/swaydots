@@ -67,6 +67,7 @@ tooltip * {
   background-color: @hover-background;
 }
 
+#idle_inhibitor,
 #clock,
 #battery,
 #wireplumber,

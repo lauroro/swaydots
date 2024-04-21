@@ -20,13 +20,13 @@ case $selected_option in
     swaymsg exit
     ;;
   "$shutdown")
-    loginctl poweroff
+    systemctl poweroff
     ;;
   "$reboot")
-    loginctl reboot
+    systemctl reboot
     ;;
   "$sleep")
-    loginctl suspend
+    systemctl suspend
     ;;
   *)
     echo "No match"
