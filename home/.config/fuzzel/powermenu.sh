@@ -1,10 +1,29 @@
 #!/bin/sh
- 
+
 lock=" Lock"
 exit="󰗼 Exit"
 shutdown="󰐥 Poweroff"
 reboot=" Reboot"
 sleep=" Suspend"
+yes="Yes"
+no="No"
+
+confirm() {
+	res=$(echo \
+"$yes
+$no" \
+| fuzzel -d --lines 5 --width 14 -p "$1"?)
+
+	case $res in
+		"$yes")
+			$2
+		;;
+	*)
+		echo "$no"
+		;;
+	esac
+}
+ 
  
 selected_option=$(echo "$lock
 $exit
@@ -17,13 +36,13 @@ case $selected_option in
     gtklock -d
     ;;
   "$exit")
-    swaymsg exit
+    swaymsg exit || riverctl exit
     ;;
   "$shutdown")
-    systemctl poweroff
+    confirm "$shutdown" "systemctl poweroff"
     ;;
   "$reboot")
-    systemctl reboot
+		confirm "$reboot" "systemctl reboot"
     ;;
   "$sleep")
     systemctl suspend
