@@ -10,8 +10,8 @@ no="No"
 
 confirm() {
 	res=$(echo \
-"$yes
-$no" \
+"$no
+$yes" \
 | fuzzel -d --lines 5 --width 14 -p "$1"?)
 
 	case $res in
